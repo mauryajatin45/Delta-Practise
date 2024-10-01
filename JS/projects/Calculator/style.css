@@ -1,0 +1,54 @@
+h1{
+    font-family: Jetbrains Mono;
+    text-align: center;
+    font-size: 3em;
+    text-decoration: underline;
+}
+
+.Container{
+    background-color: #656e75;
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 5px;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+  }
+
+#grid-item{ 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ScreenBar{
+    background-color: White;
+    border: 1px solid black;
+    width: 95.7%;
+    height: 50px;
+    margin: 1% 1%;
+    margin-top: 2%;
+    font-size: larger;
+    border-radius: 5px;
+    padding: 1%;
+
+}
+
+.grid-Enter{
+    grid-column: 1/3;
+}
+
+button{
+    background-color: White;
+}
+
+button:active{
+    background-color: #c8d0d6;
+}
