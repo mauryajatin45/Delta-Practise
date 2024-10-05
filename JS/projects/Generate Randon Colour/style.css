@@ -1,0 +1,33 @@
+*{
+    margin: auto;
+}
+h1{
+    text-align: center;
+    margin-top: 5%;
+}
+
+button{
+    width: auto;
+    height: 30px;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    font-size: larger;
+    font-weight: 700;
+    padding: 20px;
+
+}
+.colordiv{
+    border: 1px solid black;
+    padding: 5%;
+    width: 40%;
+    height: 50%;
+    
+}
+
+.colordiv p{
+    font-size: larger;
+    padding: 0;
+    margin: 0;
+}
