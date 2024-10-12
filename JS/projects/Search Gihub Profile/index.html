@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for any Github profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainContainer">    
+        <div id="Container">
+            <h1>Search Github Profile</h1>
+            <div class="search">
+                <input type="text" id="txt" placeholder="Enter Username...">
+                <button id="search">
+                    <img src="https://www.freeiconspng.com/uploads/search-icon-png-21.png" alt="Search Image" id="img">
+                </button>
+            </div>
+            <div class="showProfile">
+                <div class="first">
+                    <img src="" alt="" id="avatar">
+                    <h1 id="Name"></h1>
+                </div>
+                <div class="second">
+                    <div class="grid-container">
+                        <div class="grid-item">Followers</div>
+                        <div class="grid-item">Following</div>
+                        <div class="grid-item">Repository</div>
+                        <div class="grid-item" id="FollowersCount">0</div>
+                        <div class="grid-item" id="FollowingCount">0</div>
+                        <div class="grid-item" id="RepositoryCount">0</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>

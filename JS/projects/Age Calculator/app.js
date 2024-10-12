@@ -23,5 +23,5 @@ click.addEventListener('change', () => {
     ShowDate.innerText = `Date  =  ${Math.abs(AnswerDate)}`;
     ShowMonth.innerText = `Month  =  ${Math.abs(AnswerMonth)}`;
     ShowYear.innerText = `Year  =  ${Math.abs(AnswerYear)}`;
-    
 })
+
