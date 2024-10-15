@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Market</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="/images" href="https://cdn-icons-png.flaticon.com/512/6978/6978349.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="mainContainer">
+            <div class="header">
+                <div class="hleft">
+                    <p id="CurrentBalance">Current Balance : 00.00 ₹</p>
+                    <p id="AddBalance">Add Balance :                   
+                        <input type="number" placeholder="100" id="addbalance">
+                    </p>
+                </div>
+                <div class="hright">
+                    <p id="Holdings">Holdings : 8000</p>
+                    <p id="IncomeStatement">Profit / Loss : 250</p>
+                </div>
+            </div>
+            <div class="headeraddstock">
+                <input type="date" class="setinput" name="Date" id="Date" required>
+                <input type="text" class="setinput" name="StockName" id="StockName" placeholder="StockName" required>
+                <input type="number" class="setinput" name="Quantity" id="Quantity" placeholder="Quantity" required>
+                <input type="texnumber" class="setinput" name="Price" id="Price" placeholder="Price 0.00₹" required>
+                <button class="btnaddstock" id="AddStockbtn">ADD STOCK</button>
+            </div>
+
+
+            <div class="headerholdings">
+                <p class="h1">Holdings : </p>
+                <div class="holdingsdata">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="hEmpty"></th>
+                                <th class="hItems">Items</th>
+                                <th class="hQuantity">Quantity</th>
+                                <th class="hPrice">Price</th>
+                                <th class="hTotal">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="holdingsbody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="headertransaction">
+                <p class="h1">Transaction Book : </p>
+                <div class="transactiondata">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tDate">Date</th>
+                                <th class="tItems">Items</th>
+                                <th class="tAction">Action</th>
+                                <th class="tQuantity">Quantity</th>
+                                <th class="tAmount">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="toastnotification">
+                <h3 class="toasttext">Please enter "Date" to Continue</h3>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

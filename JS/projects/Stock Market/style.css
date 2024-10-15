@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'jetBrains Mono';
+}
+
+.container{
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.mainContainer{
+    background-color: white;
+    border: 4px solid orange;
+    border-radius: 20px;
+    width: 70vw;
+    height: 92vh;
+    box-shadow: 8px 5px rgba(128, 128, 128, 0.462);
+    /* overflow: scroll;
+    overflow: hidden; */
+}
+
+.header{
+    font-family: 'jetBrains Mono';
+    font-weight: 600;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hleft{
+    width: 50%;
+}
+
+.hright{
+    text-align: right;
+}
+
+#addbalance {
+    width: 70px;
+    height: 30px;
+    -webkit-appearance: none; 
+    -moz-appearance: textfield; 
+    appearance: none; 
+    padding-left: 2%;
+    padding-right: 1%;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+.headeraddstock{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.setinput{
+    height: 27px;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: larger;
+}
+
+.btnaddstock{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 11%;
+}
+
+#StockName{
+    width: 38%;
+}
+#Quantity{
+    width: 11%;
+}
+
+#Price{
+    width: 13.1%;
+}
+.h1{
+    font-size: larger;
+    font-weight: 800;
+}
+
+table{
+    width: 100%;
+}
+table, th, td{
+    border: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.headerholdings, .headertransaction{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+    flex-direction: column;
+}
+
+.hEmpty, .tDate {
+    width: 12%;
+}
+
+.hItems, .tItems {
+    width: 49%;
+}
+
+.hQuantity, .tQuantity {
+    width: 13%;
+}
+
+.hPrice, .tAction {
+    width: 12%;
+}
+
+.hTota, .tAmount {
+    width: 12%;
+}
+
+.toastnotification {
+    background-color: lightgreen;
+    border: 1px solid black;
+    width: 25vw;
+    height: 5vh;
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: fixed;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+.toastnotification.show {
+    opacity: 1; 
+    visibility: visible; 
+}
+
+.toasttext {
+    margin: 0; 
+    font-size: 1.2em; 
+    color: black; 
+}
+
+
+.toastnotification.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
