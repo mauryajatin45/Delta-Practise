@@ -1,282 +1,287 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "jetBrains Mono";
+    margin: 0;
+    padding: 0;
+    font-family: "jetBrains Mono";
 }
 
 .container {
-  background-color: lightblue;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .mainContainer {
-  background-color: white;
-  border: 4px solid orange;
-  border-radius: 20px;
-  width: 70vw;
-  height: 92vh;
-  box-shadow: 8px 5px rgba(128, 128, 128, 0.462);
-  /* overflow: scroll;
+    background-color: white;
+    border: 4px solid orange;
+    border-radius: 20px;
+    width: 70vw;
+    height: 92vh;
+    box-shadow: 8px 5px rgba(128, 128, 128, 0.462);
+    /* overflow: scroll;
     overflow: hidden; */
 }
 
 .header {
-  font-family: "jetBrains Mono";
-  font-weight: 600;
-  margin: 20px;
-  display: flex;
-  justify-content: space-between;
+    font-family: "jetBrains Mono";
+    font-weight: 600;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .hleft {
-  width: 50%;
+    width: 50%;
 }
 
 .hright {
-  text-align: right;
+    text-align: right;
 }
 
 #addbalance {
-  width: 70px;
-  height: 30px;
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-  appearance: none;
-  padding-left: 2%;
-  padding-right: 1%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    padding-left: 2%;
+    padding-right: 1%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .headeraddstock {
-  width: 80%;
-  display: flex;
-  margin: auto;
-  margin-top: 4%;
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
 }
-#requiredbalance{
+
+#requiredbalance {
     width: 80%;
     display: flex;
     margin: auto;
 }
 
 .setinput {
-  height: 27px;
-  padding-left: 1%;
-  padding-right: 1%;
-  font-size: larger;
+    height: 27px;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: larger;
 }
 
 .btnaddstock {
-  padding-left: 1%;
-  padding-right: 1%;
-  width: 11%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 11%;
 }
 
 #StockName {
-  width: 38%;
+    width: 38%;
 }
+
 #Quantity {
-  width: 11%;
+    width: 11%;
 }
 
 #Price {
-  width: 13.1%;
+    width: 13.1%;
 }
+
 .h1 {
-  font-size: larger;
-  font-weight: 800;
+    font-size: larger;
+    font-weight: 800;
 }
 
 table {
-  width: 100%;
+    width: 100%;
 }
+
 table,
 th,
 td {
-  border: 1px solid black;
-  font-size: 1.2rem;
-  text-align: center;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .headerholdings,
 .headertransaction {
-  width: 80%;
-  display: flex;
-  margin: auto;
-  margin-top: 4%;
-  flex-direction: column;
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+    flex-direction: column;
 }
 
 .hEmpty,
 .tDate {
-  width: 12%;
+    width: 12%;
 }
 
 .hItems {
-  width: 49%;
+    width: 49%;
 }
 
 .hQuantity,
 .tQuantity {
-  width: 13%;
+    width: 13%;
 }
 
 .hPrice,
 .tAction,
 .tPrice {
-  width: 12%;
+    width: 12%;
 }
 
 .hTotal,
 .tAmount {
-  width: 12%;
+    width: 12%;
 }
 
 .tItems {
-  width: 40%;
+    width: 40%;
 }
 
 .toastnotification {
-  background-color: lightgreen;
-  border: 1px solid black;
-  width: 25vw;
-  height: 5vh;
-  display: flex;
-  margin: auto;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  visibility: hidden;
-  padding: 10px;
-  z-index: 1001;
+    background-color: lightgreen;
+    border: 1px solid black;
+    width: 25vw;
+    height: 5vh;
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px;
+    z-index: 1001;
 }
 
 .toastnotification.show {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1001;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1001;
 }
 
 .toasttext {
-  margin: 0;
-  font-size: 1.2em;
-  color: black;
-  z-index: 1001;
+    margin: 0;
+    font-size: 1.2em;
+    color: black;
+    z-index: 1001;
 }
 
 .toastnotification.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .sell {
-  background-color: red;
-  width: 10%;
-  text-align: center;
-  margin: auto;
-  border: 1px solid black;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 2px 2px rgba(128, 128, 128, 0.462);
+    background-color: red;
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(128, 128, 128, 0.462);
 }
+
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7); 
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  border-radius: 8px; 
-  width: 90%; 
-  max-width: 400px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .modal-content-2 {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .sellq,
 .sellp {
-  margin-bottom: 15px; 
-  width: 100%;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 label {
-  margin-bottom: 5px;
-  font-weight: bold; 
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input[type="number"] {
-  padding: 10px; 
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  width: 100%; 
-  box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #confirmSell {
-  background-color: #fa0202; 
-  color: white;
-  padding: 10px 15px; 
-  border: none;
-  border-radius: 4px; 
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
+    background-color: #fa0202;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between; /* Align items with space in between */
-  width: 100%; /* Full width for proper alignment */
-  align-items: center; /* Center items vertically */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
 .modal-header h2 {
-  margin: 0; /* Remove default margin from h2 */
-  font-size: 1.5em; /* Adjust size as needed */
+    margin: 0;
+    font-size: 1.5em;
 }
