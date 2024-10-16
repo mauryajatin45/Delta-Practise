@@ -51,7 +51,7 @@ const priceElement = elements.Price;
 const quantityElement = elements.Quantity;
 
 const updateTotal = () => {
-  const q = parseInt(quantityElement.value, 10) || 0;
+  const q = parseInt(quantityElement.value) || 0;
   const p = parseFloat(priceElement.value) || 0;
   updateText(elements.RequiredBalance, `Order Total: ${q * p} ₹`);
 };
