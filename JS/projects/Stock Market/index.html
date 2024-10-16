@@ -24,12 +24,16 @@
                     <p id="IncomeStatement">Profit / Loss : 250</p>
                 </div>
             </div>
+
             <div class="headeraddstock">
                 <input type="date" class="setinput" name="Date" id="Date" required>
                 <input type="text" class="setinput" name="StockName" id="StockName" placeholder="StockName" required>
                 <input type="number" class="setinput" name="Quantity" id="Quantity" placeholder="Quantity" required>
                 <input type="texnumber" class="setinput" name="Price" id="Price" placeholder="Price 0.00₹" required>
                 <button class="btnaddstock" id="AddStockbtn">ADD STOCK</button>
+            </div>
+            <div id="requiredbalance">
+                <p  class="requiredbalance"></p>
             </div>
 
 
@@ -75,6 +79,27 @@
             <div class="toastnotification">
                 <h3 class="toasttext">Please enter "Date" to Continue</h3>
             </div>
+            <div id="sellModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Sell Stock</h2>
+                        <span class="close" id="closeModal">&times;</span>
+                    </div>
+                    <div class="modal-content-2">
+                        <div class="sellq">
+                            <label for="sellQuantity">Quantity:</label>
+                            <input type="number" id="sellQuantity" placeholder="Enter Quantity" required />
+                        </div>
+            
+                        <div class="sellp">
+                            <label for="sellPrice">Sell Price:</label>
+                            <input type="number" id="sellPrice" placeholder="Enter Sell Price" readonly/>
+                        </div>
+                    </div>
+                    <button id="confirmSell">Confirm Sell</button>
+                </div>
+            </div>            
+            
         </div>
     </div>
     <script src="app.js"></script>
