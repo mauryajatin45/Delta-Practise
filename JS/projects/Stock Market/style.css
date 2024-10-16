@@ -96,6 +96,7 @@ table{
 table, th, td{
     border: 1px solid black;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .headerholdings, .headertransaction{
@@ -110,7 +111,7 @@ table, th, td{
     width: 12%;
 }
 
-.hItems, .tItems {
+.hItems {
     width: 49%;
 }
 
@@ -118,12 +119,16 @@ table, th, td{
     width: 13%;
 }
 
-.hPrice, .tAction {
+.hPrice, .tAction, .tPrice {
     width: 12%;
 }
 
-.hTota, .tAmount {
+.hTotal, .tAmount {
     width: 12%;
+}
+
+.tItems {
+    width: 40%;
 }
 
 .toastnotification {
@@ -144,6 +149,7 @@ table, th, td{
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
+    padding: 10px;
 }
 
 .toastnotification.show {
@@ -163,4 +169,13 @@ table, th, td{
     transition: opacity 0.5s ease-in-out;
 }
 
-
+.sell{
+    background-color: red;
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(128, 128, 128, 0.462);
+}
