@@ -20,25 +20,22 @@ const elements = {
   RequiredBalance: document.querySelector(".requiredbalance"),
 };
 
-let Sell;
+// let StockArrCounter = 0;
+// co StockSaver = {};
 let stocks = [];
 let BalanceAmt = 0;
-let day = elements.currentDate.getDate();
-let month = elements.currentDate.getMonth() + 1;
-let year = elements.currentDate.getFullYear();
-let currentDate = `${day}/${month}/${year}`;
 
 const updateText = (element, text) => (element.innerText = text);
 
-updateText(elements.CurrentBalance, `Current Balance : ${BalanceAmt} ₹`);
-updateText(elements.Holdings, `Holdings : ${BalanceAmt} ₹`);
-updateText(elements.IncomeStatement, `Profit / Loss : ${BalanceAmt} ₹`);
+updateText(elements.CurrentBalance, `Current Balance: ${BalanceAmt} ₹`);
+updateText(elements.Holdings, `Holdings: ${BalanceAmt} ₹`);
+updateText(elements.IncomeStatement, `Profit / Loss: ${BalanceAmt} ₹`);
 
 elements.AddBalance.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    const inputvalue = parseInt(elements.AddBalance.value);
-    if (inputvalue) {
-      BalanceAmt += inputvalue;
+    const inputValue = parseInt(elements.AddBalance.value);
+    if (inputValue) {
+      BalanceAmt += inputValue;
       updateText(elements.CurrentBalance, `Current Balance: ${BalanceAmt} ₹`);
       elements.AddBalance.value = "";
     } else {
@@ -53,7 +50,12 @@ const quantityElement = elements.Quantity;
 const updateTotal = () => {
   const q = parseInt(quantityElement.value) || 0;
   const p = parseFloat(priceElement.value) || 0;
-  updateText(elements.RequiredBalance, `Order Total: ${q * p} ₹`);
+  if((q && p) == 0){
+    elements.RequiredBalance.style.display = 'none';
+  }else{
+    elements.RequiredBalance.style.display = 'block';
+    updateText(elements.RequiredBalance, `Order Total: ${q * p} ₹`);
+  }
 };
 
 priceElement.addEventListener("input", updateTotal);
@@ -62,37 +64,38 @@ quantityElement.addEventListener("input", updateTotal);
 elements.AddStockbtn.addEventListener("click", () => {
   const d = elements.Date.value;
   const sn = elements.StockName.value;
-  const q = elements.Quantity.value;
+  const q = parseInt(elements.Quantity.value);
   const p = parseFloat(elements.Price.value);
 
   if (!d || !sn || !q || !p) {
     showToast("Filling all fields is mandatory");
   } else if (BalanceAmt >= p * q) {
-    AddHoldings(sn, q, p);
+    AddHoldings(sn, q, p); 
     AddToTransactionBook(d, sn, q, p);
-    Sell = document.querySelector(".sell");
   } else {
     showToast(`You need ${q * p - BalanceAmt} ₹ to add this Stock`);
   }
-  (Sell = document.querySelector(".sell")),
-    Sell.addEventListener("click", () => {
-      document.querySelector(".modal").style.display = "block";
-      updateText(elements.sellPrice, p);
 
-      if (!elements.confirmSell.dataset.listenerAdded) {
-        elements.confirmSell.addEventListener("click", () => {
-          const sellQuantity = parseInt(elements.sellQuantity.value);
-          if (sellQuantity > 0 && sellQuantity <= q) {
-            AddToTransactionBook(d, sn, sellQuantity, p, "Sell"); // Pass the correct parameters
-            document.querySelector(".modal").style.display = "none";
-          } else {
-            showToast(`Enter a number between 1 and ${q}`);
-          }
-        });
+  const sellButton = document.querySelector(".sell");
+  sellButton.addEventListener("click", () => {
+    document.querySelector(".modal").style.display = "block";
+    updateText(elements.sellPrice, p);
 
-        elements.confirmSell.dataset.listenerAdded = true;
-      }
-    });
+    if (!elements.confirmSell.dataset.listenerAdded) {
+      elements.confirmSell.addEventListener("click", () => {
+        const sellQuantity = parseInt(elements.sellQuantity.value);
+        if (sellQuantity > 0 && sellQuantity <= q) {
+          const RandomPrice = (p * (0.95 + Math.random() * 0.1)).toFixed(2); 
+          AddToTransactionBook(d, sn, sellQuantity, RandomPrice, "Sell");
+          document.querySelector(".modal").style.display = "none";
+        } else {
+          showToast(`Enter a number between 1 and ${q}`);
+        }
+      });
+
+      elements.confirmSell.dataset.listenerAdded = true;
+    }
+  });
 
   elements.close.addEventListener("click", () => {
     document.querySelector(".modal").style.display = "none";
@@ -105,74 +108,104 @@ function showToast(message) {
 
   setTimeout(() => {
     elements.Toast.classList.remove("show");
-  }, 2000);
-}
-
-function AddHoldings(sn, q, p) {
+  }, 5000);
+}function AddHoldings(sn, q, p) {
+  const initialRandomPrice = (p * (0.95 + Math.random() * 0.1)).toFixed(2);
+  
   const stock = {
     name: sn,
-    quantity: parseInt(q),
-    price: parseFloat(p),
+    quantity: q,
+    initialPrice: initialRandomPrice, 
+    currentPrice: initialRandomPrice, 
     dateAdded: elements.Date.value,
   };
+  
   stocks.push(stock);
+  updateHoldingsDisplay(); 
+  updateText(elements.CurrentBalance, `Current Balance: ${BalanceAmt - p * q} ₹`);
 
-  const row = createRow([
-    { class: "sell", text: "Sell" },
-    { text: sn },
-    { text: `${q}` },
-    { text: `${p.toFixed(2)} ₹` },
-    { text: `${(q * p).toFixed(2)} ₹` },
-  ]);
-
-  elements.HoldingsBody.appendChild(row);
-  updateText(
-    elements.CurrentBalance,
-    `Current Balance : ${BalanceAmt - p * q} ₹`
-  );
-
-  const updateProfitLoss = () => {
-    const RandomPrice = (p * (0.95 + Math.random() * 0.1)).toFixed(2);
-    row.children[3].innerText = `${RandomPrice} ₹`;
-    row.children[4].innerText = `${(q * RandomPrice).toFixed(2)} ₹`;
-
-    updateText(
-      elements.Holdings,
-      `Holdings : ${(q * RandomPrice).toFixed(2)} ₹`
-    );
-
-    const totalValue = (q * RandomPrice).toFixed(2);
-    const initialInvestment = (p * q).toFixed(2); // Total investment based on initial price and quantity
-    const profitLoss = (totalValue - initialInvestment).toFixed(2); // Profit/Loss calculation
-
-    if (profitLoss > 0) {
-      elements.IncomeStatement.innerText = `Profit = ${profitLoss} ₹`;
-      elements.IncomeStatement.style.color = "green";
-    } else {
-      elements.IncomeStatement.innerText = `Loss = ${Math.abs(profitLoss)} ₹`;
-      elements.IncomeStatement.style.color = "red";
-    }
-  };
+  // Reset input fields
   document.querySelector("#StockName").value = "";
   document.querySelector("#Date").value = "";
   document.querySelector("#Quantity").value = "";
   document.querySelector("#Price").value = "";
-  setInterval(updateProfitLoss, 1000);
+
+  setInterval(() => {
+    updateProfitLoss(stock);
+  }, 1000);
 }
 
-function AddToTransactionBook(
-  d = currentDate,
-  sn,
-  q,
-  p,
-  IncomeStatement = "Buy"
-) {
+function updateHoldingsDisplay() {
+  elements.HoldingsBody.innerHTML = '';
+  let totalHoldingsValue = 0; 
+
+  stocks.forEach(stock => {
+    const row = createRow([
+      { class: "sell", text: "Sell" },
+      { text: stock.name },
+      { text: `${stock.quantity}` },
+      { text: `${stock.currentPrice} ₹` }, 
+      { text: `${(stock.quantity * stock.currentPrice).toFixed(2)} ₹` }, 
+    ]);
+    elements.HoldingsBody.appendChild(row);
+
+    totalHoldingsValue += stock.quantity * stock.currentPrice;
+  });
+
+  updateText(elements.Holdings, `Holdings: ${totalHoldingsValue.toFixed(2)} ₹`);
+  
+  updateTotalProfitLoss(); 
+}
+
+function updateProfitLoss(stock) {
+  const newRandomPrice = (stock.initialPrice * (0.95 + Math.random() * 0.1)).toFixed(2);
+  stock.currentPrice = newRandomPrice; 
+  updateHoldingsDisplay(); 
+}
+
+function updateTotalProfitLoss() {
+  let totalInitialInvestment = 0;
+  let totalCurrentValue = 0;
+
+  stocks.forEach(stock => {
+    const initialInvestment = stock.initialPrice * stock.quantity;
+    const currentValue = stock.currentPrice * stock.quantity;
+
+    totalInitialInvestment += parseFloat(initialInvestment);
+    totalCurrentValue += parseFloat(currentValue);
+  });
+
+  const profitLoss = (totalCurrentValue - totalInitialInvestment).toFixed(2);
+
+  if (profitLoss > 0) {
+    elements.IncomeStatement.innerText = `Profit = ${profitLoss} ₹`;
+    elements.IncomeStatement.style.color = "green";
+  } else {
+    elements.IncomeStatement.innerText = `Loss = ${Math.abs(profitLoss)} ₹`;
+    elements.IncomeStatement.style.color = "red";
+  }
+}
+
+function createRow(data) {
+  const row = document.createElement("tr");
+  data.forEach(({ class: className, text, style }) => {
+    const td = document.createElement("td");
+    if (className) td.className = className;
+    td.innerText = text;
+    if (style) Object.assign(td.style, style);
+    row.appendChild(td);
+  });
+  return row;
+}
+
+
+function AddToTransactionBook(d = currentDate, sn, q, p, IncomeStatement = "Buy") {
+  const priceToUse = p || (Math.random() * (1000 - 10) + 10).toFixed(2);
+
   const GivenDate = new Date(d);
   const row = createRow([
     {
-      text: `${GivenDate.getDate()}/${
-        GivenDate.getMonth() + 1
-      }/${GivenDate.getFullYear()}`,
+      text: `${GivenDate.getDate()}/${GivenDate.getMonth() + 1}/${GivenDate.getFullYear()}`,
     },
     { text: sn },
     {
@@ -183,8 +216,8 @@ function AddToTransactionBook(
       },
     },
     { text: `${q}` },
-    { text: `${p}` },
-    { text: `${q * p} ₹` },
+    { text: `${priceToUse} ₹` },
+    { text: `${(q * priceToUse).toFixed(2)} ₹` },
   ]);
 
   elements.TransactionBody.appendChild(row);

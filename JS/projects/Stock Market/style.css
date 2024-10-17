@@ -75,6 +75,19 @@
     font-size: larger;
 }
 
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .btnaddstock {
     padding-left: 1%;
     padding-right: 1%;
@@ -248,19 +261,6 @@ td {
 .sellp {
     margin-bottom: 15px;
     width: 100%;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 #confirmSell {
