@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { text: IncomeStatement, style: { color: IncomeStatement === "Buy" ? "green" : "red", fontWeight: "bold" } },
             { text: `${q}` },
             { text: `${priceToUse} ₹` },
-            { text: `${(q * priceToUse).toFixed(2)} ₹` },
+            { text: `${(q * priceToUse).toFixed(2)} ₹`},
         ]);
         elements.TransactionBody.appendChild(row);
     }
