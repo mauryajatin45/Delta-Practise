@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.maincontainer {
+  background-color: indigo;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subcontainer {
+  background-color: rgb(115, 39, 169);
+  width: 60vw;
+  height: 60vh;
+  border-radius: 12px;
+  border: 0.2px solid white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.textarea {
+  font-family: "Jetbrains Mono";
+  font-size: 1.5em;
+  color: aliceblue;
+  width: 95%;
+  background-color: indigo;
+  height: 70%;
+  margin-top: 3%;
+  border-radius: 12px;
+  padding: 1%;
+  overflow: hidden;
+  scroll-behavior: auto;
+}
+
+.btn {
+  font-size: 1.3em;
+  color: aliceblue;
+  margin: 2%;
+  background-color: white;
+  color: black;
+  padding: 0.7%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.btn:hover {
+  background-color: rgb(207, 206, 206);
+}
+
+.timer {
+  position: absolute;
+  left: 21%;
+  bottom: 23%;
+  font-size: 1.7em;
+  color: rgba(255, 255, 255, 0.81);
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.header {
+  font-size: xx-large;
+  color: white;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: absolute;
+  top: 6%;
+  font-weight: 900;
+}
