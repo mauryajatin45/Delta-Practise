@@ -27,12 +27,12 @@ btn.addEventListener('click', () => {
 function startTest() {
     btn.innerHTML = "Type...";
     userinput.style.display = 'block';
-    userinput.value = ''; // Clear the input field
+    userinput.value = ''; 
     textarea.style.height = '60%';
     timer.style.bottom = '31%';
     
     clearInterval(interval);
-    second = 9; 
+    second = 59; 
     startTime = Date.now();
 
     interval = setInterval(() => {
@@ -48,7 +48,7 @@ function startTest() {
 
 close.addEventListener('click', refreshPage);
 function refreshPage() {
-    location.reload(); // Refresh the page
+    location.reload(); 
 }
 
 function showToast() {
@@ -59,7 +59,7 @@ function showToast() {
     setTimeout(() => {
         toastnotification.classList.remove('show');
         subcontainer.style.filter = 'blur(0px)';
-        refreshPage(); // Refresh the page when the toast closes
+        refreshPage(); 
     }, 5000);
 }
 
