@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Typing speed checker</title>
+    <title>Typing Speed Checker</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Playwrite+GB+S:wght@100..400&display=swap" rel="stylesheet" />
+</head>
+<body>
     <div class="maincontainer">
-      <p class="header">Typing Speed Tester</p>
-      <div class="subcontainer">
-        <div class="textarea"></div>
-        <div class="timer">
-          <p>Time remaing : 60s</p>
+        <p class="header">Typing Speed Tester</p>
+        <div class="subcontainer">
+            <div class="textarea" contenteditable="false"></div>
+            <div class="timer">
+                <p>Time remaining: 60s</p>
+            </div>
+            <div class="tester btn">
+                <p>Start Test</p>
+            </div>
+            <input type="text" class="userinput" placeholder="Start Typing Champ!" style="display: none;" />
         </div>
-        <div class="tester btn">
-          <p>Start Test</p>
+        <div class="toastnotification">
+            <div class="close">&#x2715;</div>
+            <p class="scoretxt">Scorecard</p>
+            <div class="marks">
+                <div class="wpm colorbox">
+                    <p>W.P.M.</p>
+                    <div class="wpmscore scorecolor">50</div>
+                </div>
+                <div class="errors colorbox">
+                    <p>Error</p>
+                    <div class="errorscore scorecolor">50</div>
+                </div>
+                <div class="cpm colorbox">
+                    <p>C.P.M.</p>
+                    <div class="cpmscore scorecolor">50</div>
+                </div>
+            </div>
         </div>
-        <input type="text" class="userinput" placeholder="Type Here!!!" />
-      </div>
-      <div class="toastnotification">
-        <div class="close">&#x2715;</div>
-        <p class="scoretxt">Scorecard</p>
-        <div class="marks">
-          <div class="wpm colorbox">
-            <p>W.P.M.</p>
-            <div class="wpmscore scorecolor">50</div>
-          </div>
-          <div class="error colorbox">
-            <p>Error</p>
-            <div class="errorscore scorecolor">50</div>
-          </div>
-          <div class="cpm colorbox">
-            <p>C.P.M.</p>
-            <div class="cpmscore scorecolor">50</div>
-          </div>
-        </div>
-      </div>
     </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

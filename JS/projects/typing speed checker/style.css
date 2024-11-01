@@ -39,6 +39,7 @@
   padding: 1%;
   overflow: hidden;
   scroll-behavior: auto;
+  position: relative;
 }
 
 .btn {
