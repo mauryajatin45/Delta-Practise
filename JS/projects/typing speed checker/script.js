@@ -55,12 +55,6 @@ function showToast() {
     subcontainer.style.filter = 'blur(5px)';
     toastnotification.style.display = 'flex';
     toastnotification.classList.add('show');
-
-    setTimeout(() => {
-        toastnotification.classList.remove('show');
-        subcontainer.style.filter = 'blur(0px)';
-        refreshPage(); 
-    }, 5000);
 }
 
 function ResetNormal() {
@@ -112,7 +106,6 @@ userinput.addEventListener('input', (e) => {
     if (inputText === str) {
         clearInterval(interval);
         timer.innerHTML = "Well done! Time's up!";
-        btn.innerHTML = "Test Again";
         userinput.style.display = 'none';
         return;
     }
