@@ -27,11 +27,16 @@ app.listen(port, ()=>{
 //     res.send('Ye page exist nhai karta ha, Dhanayavad!!!');
 // });
 
-// app.post('/', (req, res)=>{
-//     res.send('You sent a post request');
-// });
-
-app.get('/:username', (req, res)=>{
-    let {username} = req.params;
-    res.send(`You are viewing the page of ${username}`);
+app.post('/', (req, res)=>{
+    res.send('You sent a post request');
 });
+
+ app.get('/search', (req, res)=>{
+    let {q} = req.query;
+    if(!q){
+        res.send('Bhai scam mat kar mera sath');
+    }
+    res.send(`aap ka result ka name ha ${q}` );
+ });
+
+ 
