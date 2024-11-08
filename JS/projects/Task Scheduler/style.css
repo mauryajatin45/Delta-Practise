@@ -1,0 +1,228 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e; /* Dark background */
+    color: #e4e4e4; /* Light text color for contrast */
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #121212; /* Darker header background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Main container */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Task form */
+.task-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+}
+
+input, select, button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333; /* Dark input/select background */
+    color: #e4e4e4; /* Light text */
+    width: 100%; /* Ensure inputs take full width */
+    max-width: 250px; /* Prevent inputs from becoming too wide */
+}
+
+/* Focus States */
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #4caf50; /* Focus outline color */
+}
+
+/* Button */
+button {
+    background-color: #4caf50; /* Green button */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 150px; /* Prevent button from becoming too large */
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+button:disabled {
+    background-color: #888; /* Disabled state */
+    cursor: not-allowed;
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task {
+    background-color: #2a2a2a; /* Dark background for task card */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task:hover {
+    transform: translateY(-5px); /* Hover effect for task cards */
+}
+
+.task p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.task p strong {
+    font-weight: 600;
+}
+
+/* Delete Button */
+.task button {
+    background-color: #f44336; /* Red color for delete button */
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.task button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.task .mark-done {
+    background-color: #4caf50; /* Green color for "Mark Done" button */
+}
+
+.task .mark-done:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.buttons2{
+    display: flex;
+    width: fit-content;
+}
+
+/* Filter Section Styling */
+.filter {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow filter buttons to wrap on smaller screens */
+}
+
+.filter button {
+    background-color: #333; /* Dark button background */
+    color: #e4e4e4; /* Light text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter button:hover {
+    background-color: #4caf50; /* Green color for filter hover effect */
+}
+#task-stats{
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Task form should be stacked vertically */
+    .task-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input, select, button {
+        max-width: 100%; /* Inputs and button should take full width */
+    }
+
+    /* Task list should be spaced out appropriately */
+    .task {
+        padding: 15px;
+    }
+
+    /* Filter buttons should wrap and stack on smaller screens */
+    .filter {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter button {
+        width: 100%;
+        max-width: 300px; /* Button width limit on small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.5rem; /* Smaller header text for mobile */
+    }
+
+    .task-form input,
+    .task-form select,
+    .task-form button {
+        font-size: 14px; /* Slightly smaller font for mobile */
+    }
+
+    .task button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .task p {
+        font-size: 12px; /* Smaller text for tasks on mobile */
+    }
+
+    .task .mark-done,
+    .task button {
+        font-size: 12px;
+    }
+}
