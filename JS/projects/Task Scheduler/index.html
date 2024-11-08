@@ -22,11 +22,11 @@
           <option value="third">Third Priority</option>
         </select>
         <input type="datetime-local" id="deadline" required />
+        <input type="text" id="task-tag" placeholder="Enter tags (comma separated)" />
         <button id="add-task">Add Task</button>
       </div>
 
-      <!-- Search and Stats Section -->
-      <!-- Task Stats Section -->
+      <!-- Task Stats and Search Section -->
       <div id="task-stats">
         <input type="text" id="search" placeholder="Search tasks..." />
         <p>Completed: <span id="completed-count">0</span></p>
@@ -34,19 +34,32 @@
         <progress id="progress-bar" max="100" value="0"></progress>
       </div>
 
-      <!-- Filter buttons -->
-      <div class="filter">
+      <!-- Filter Section Button -->
+      <button id="toggle-filters">Filter Tasks</button>
+
+      <!-- Filter Options -->
+      <div id="filter-options" class="filter-options">
         <button id="filter-all">All Tasks</button>
         <button id="filter-first">First Priority</button>
         <button id="filter-second">Second Priority</button>
         <button id="filter-third">Third Priority</button>
         <button id="filter-completed">Completed</button>
         <button id="filter-pending">Pending</button>
+        <button id="sort-by-deadline">Sort by Deadline</button>
+        <button id="sort-by-priority">Sort by Priority</button>
+        <button id="sort-by-name">Sort by Name</button>
       </div>
 
       <!-- Task List -->
       <div class="task-list" id="task-list">
         <!-- Tasks will be dynamically added here -->
+      </div>
+
+      <!-- Task History Section -->
+      <button id="show-history">Show Completed Tasks</button>
+      <div id="history-section" style="display: none;">
+        <h2>Task History</h2>
+        <div id="completed-tasks-list"></div>
       </div>
     </main>
 
