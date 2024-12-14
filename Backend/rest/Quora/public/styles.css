@@ -1,0 +1,14 @@
+.postdiv{
+    background-color: rgb(235, 212, 122);
+}
+
+.username{
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    font-style: italic;
+}
+
+.content{
+    color: rgb(0, 0, 0);
+    font-size: large;
+}
