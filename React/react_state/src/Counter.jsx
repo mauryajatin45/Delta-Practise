@@ -2,10 +2,6 @@ import { useState } from "react"
 
 export default function Counter(){
 
-    Counter(){
-        console.log("Counter created and called successfully, Hiten ");
-    }
-
     let [Count, setCount] = useState(0);
 
     function incCount() {
