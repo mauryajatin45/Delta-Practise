@@ -1,0 +1,7 @@
+.production{
+    border: 1px solid white; 
+    border-radius: 12px;
+    margin-bottom: 5%;
+    padding: 3%;
+    width: 100%;
+}

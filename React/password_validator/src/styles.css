@@ -1,0 +1,123 @@
+/* Reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General styles */
+  body {
+    background-color: #1f1f1f; /* Dark background */
+    color: white; /* White text for readability */
+    font-family: Arial, sans-serif; /* Common font */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Flexbox container for centering content */
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Content section */
+  .contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    height: auto;
+    background-color: #333; /* Dark background */
+    padding: 40px; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    flex-direction: column; /* Stack content vertically */
+    margin-top: 10%;
+  }
+  
+  /* Header section */
+  .contentHeader {
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Styling for form labels */
+  .contentHeader label {
+    font-size: 1.5rem; /* Increased label font size */
+    color: #f4f7fc;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  /* Styling for input fields */
+  .contentHeader input[type="text"] {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    margin-top: 12px;
+    border: 1px solid #555;
+    border-radius: 6px; /* Slightly rounded corners */
+    font-size: 1.2rem; /* Increased font size for readability */
+    outline: none;
+    background-color: #444;
+    color: white;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .contentHeader input[type="text"]:focus {
+    border-color: #007bff;
+    background-color: #555;
+  }
+  
+  /* Styling for feedback text */
+  .contentHeader p {
+    font-size: 1.2rem; /* Increased font size */
+    margin-top: 20px;
+  }
+  
+  /* Feedback for each condition */
+  .contentConditions {
+    margin-top: 30px;
+    font-size: 1.1rem; /* Larger font size */
+    text-align: left;
+    color: #ddd;
+  }
+  
+  .condition {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2rem; /* Increased font size */
+  }
+  
+  .condition.valid {
+    color: #4caf50; /* Green for valid conditions */
+  }
+  
+  .condition.invalid {
+    color: #f44336; /* Red for invalid conditions */
+  }
+  
+  /* Optional: Button styling (for future use) */
+  .contentHeader button {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem; /* Larger font size */
+    cursor: pointer;
+  }
+  
+  .contentHeader button:hover {
+    background-color: #0056b3;
+  }
+  
