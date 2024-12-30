@@ -1,0 +1,104 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* First Div (Weather Data Display) */
+  .firstDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(0, 123, 255, 0.2));
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .firstDiv:hover {
+    transform: translateY(-10px); /* Hover effect to lift the card */
+  }
+  
+  /* Title & City */
+  .firstDivCity {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+  
+  /* Temperature */
+  .firstDivTemp {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff8c00; /* Warm temperature color */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Weather Description */
+  .firstDivDesc {
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  /* Feels Like Temperature */
+  .firstDivFeelsLike {
+    font-size: 18px;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Weather Data (Low and High Temperature) */
+  .firstDivAtmos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .firstDivLow, .firstDivHigh {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgba(0, 123, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .firstDivLow {
+    background-color: #5cb85c; /* Green for low */
+  }
+  
+  .firstDivHigh {
+    background-color: #d9534f; /* Red for high */
+  }
+  
+  /* Hover effects for low/high temperature cards */
+  .firstDivLow:hover {
+    background-color: #4cae4c;
+  }
+  
+  .firstDivHigh:hover {
+    background-color: #c9302c;
+  }
+  
