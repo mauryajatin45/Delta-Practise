@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <h3>All chats</h3>
+    <a href="http://localhost:3000/chats/new">Send Message</a>
+    <% for (let chat of allChat) {%>
+    <div class="chat">
+      <p>From : <%= chat.from%></p>
+      <p>To : <%= chat.to%></p>
+      <p class="msg">Message : <%= chat.message%></p>
+      <p>Delivered : <%= chat.created_at.toString().split(" ")[4] %></p>
+      <a href="http://localhost:3000/chats/<%=chat.id%>/edit">Edit Message</a>
+    </div>
+    <% } %>
+  </body>
+</html>

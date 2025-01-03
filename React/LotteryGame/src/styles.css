@@ -1,0 +1,111 @@
+/* LotteryGame.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2f2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #34495e;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+.lottery-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  button:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(1);
+  }
+  
+  .ticket {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .ticket span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #fff;
+    color: #2980b9;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s ease;
+  }
+  
+  .ticket span:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+/* Alert Styles */
+.alert {
+    position: fixed;
+    bottom: 20px; /* Position it at the bottom of the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    background-color: #e74c3c; /* Red background */
+    color: white; /* White text color */
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1000; /* Make sure it's on top of other content */
+    font-size: 1.2rem;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .alert p {
+    margin: 0; /* Remove extra margin */
+    font-size: 1.2rem;
+  }
+  
